@@ -8,9 +8,9 @@ The page is responsive, just like the original.
 
 [Link to Page](https://spotify-clone-by-peach.netlify.app/)
 
-![Spotify Landing Page - Desktop]()
+![Spotify Landing Page - Desktop](https://raw.githubusercontent.com/Peac-h/spotify-landing-page/main/Screenshot_Desktop.png)
 
-![Spotify Landing Page - Desktop Big Screens]()
+![Spotify Landing Page - Desktop Big Screens](https://raw.githubusercontent.com/Peac-h/spotify-landing-page/main/Screenshot_Big_Screens.png)
 
 ## Technologies Used
 

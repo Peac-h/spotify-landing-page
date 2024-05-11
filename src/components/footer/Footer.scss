@@ -1,0 +1,30 @@
+@import "../../styles.scss";
+
+.footer {
+  min-width: 785px;
+  grid-column: span 2;
+  padding: 11px 24px 7px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap-big);
+  background-image: var(--linear-footer);
+  cursor: pointer;
+
+  &__left {
+    margin-bottom: 4px;
+  }
+
+  &__header {
+    font-size: var(--font-small);
+    font-weight: var(--font-bold);
+  }
+
+  &__text {
+    font-size: var(--font-reg);
+  }
+
+  &__button {
+    @include button-primary;
+  }
+}

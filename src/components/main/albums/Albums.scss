@@ -1,0 +1,132 @@
+.album {
+  padding: 65px var(--padding-clamp) 2px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+    max-width: 1955px;
+  }
+
+  &__heading {
+    font-size: var(--font-big);
+    font-weight: var(--font-bold);
+    letter-spacing: -1px;
+  }
+
+  &__link {
+    &--small {
+      font-size: var(--font-small);
+      font-weight: var(--font-bold);
+      color: var(--col-gray) !important;
+      margin-top: 8px;
+    }
+
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(157px, 1fr));
+    grid-template-rows: 1fr;
+    gap: var(--gap-big);
+    min-width: 440px;
+    max-width: 1955px;
+    overflow: hidden;
+
+    @media screen and (max-width: 1000px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    &-item {
+      padding: 16px;
+      transition: background-color 0.3s ease;
+      background: var(--col-black-qua);
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background: var(--col-black-qui);
+
+        & .album__item-button {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  &__item {
+    &-img-box {
+      border-radius: 6px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    &-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      height: 48px;
+      width: 48px;
+      background: var(--col-green);
+      border: none;
+      border-radius: 100%;
+      box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+      transform: translateY(8px);
+      cursor: pointer;
+
+      &:hover {
+        scale: 1.05;
+      }
+    }
+
+    &-details {
+      height: 64px;
+    }
+
+    &-name {
+      display: block;
+      font-size: var(--font-reg);
+      font-weight: var(--font-bold);
+      margin-bottom: 2.5px;
+
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    &-artist-name {
+      font-size: var(--font-small);
+      font-weight: var(--font-reg-bold);
+      color: var(--col-gray-ter);
+      line-height: 1.4;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.linear-background {
+  background: var(--linear-albums);
+}

@@ -1,0 +1,13 @@
+.error-frame {
+  height: 30vh;
+  padding: 100px var(--padding-clamp);
+  font-size: var(--font-reg);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-smaller);
+
+  &__light-color {
+    color: var(--col-gray-sec);
+  }
+}

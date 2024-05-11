@@ -1,0 +1,42 @@
+.nav {
+  &__logo-container {
+    display: flex;
+  }
+
+  &__logo-link {
+    height: 24px;
+    margin-top: 20px;
+    padding: 0 24px;
+  }
+
+  &__list {
+    padding: 8px 12px;
+
+    &-item {
+      padding: 4px 12px;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: var(--gap-reg);
+      height: 40px;
+
+      &:hover .nav-svg,
+      &:hover .nav__list-text {
+        color: var(--col-white);
+        fill: var(--col-white);
+      }
+    }
+
+    &-text {
+      font-size: var(--font-reg);
+      font-weight: var(--font-bold);
+      transition: color 0.2s linear;
+    }
+  }
+
+  .nav-svg {
+    transition: fill 0.2s linear;
+  }
+}

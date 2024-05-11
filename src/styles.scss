@@ -1,0 +1,216 @@
+:root {
+  color-scheme: light dark;
+
+  // Colors
+  // White
+  --col-white: #fff;
+  // Black
+  --col-black: #000;
+  --col-black-light: #121212;
+  --col-black-sec: #242424;
+  --col-black-ter: #292929;
+  --col-black-qua: #181818;
+  --col-black-qui: #282828;
+  --col-black-sen: #0a0a0a;
+  --col-black-sep: #222222;
+  --col-black-oct: #1a1a1a;
+  // Load black
+  --col-black-load: #3c3c3c;
+  --col-black-load-sec: #1d1d1d;
+  --col-black-load-qua: #2e2d2d;
+  --col-black-load-ter: #5d5d5d;
+  // Gray
+  --col-gray: #b3b3b3;
+  --col-gray-sec: #a7a7a7;
+  --col-gray-ter: #b0b0b0;
+  --col-gray-dark: #727272;
+  // Colorfuls
+  --col-green: #1ed760;
+  --col-purple: #af2896;
+  --col-blue: #509bf5;
+
+  // Linear
+  --linear-load: linear-gradient(var(--col-black-sep), var(--col-black-sen));
+  --linear-albums: linear-gradient(
+    var(--col-black-sep),
+    var(--col-black-light)
+  );
+  --linear-footer: linear-gradient(90deg, var(--col-purple), var(--col-blue));
+
+  // Padding
+  --padding-clamp: clamp(
+    16px,
+    16px + (100vw - 338px - 0px - 600px)/424 * 8,
+    24px
+  );
+
+  // Font
+  // Size
+  --font-biggest: 32px;
+  --font-big: 24px;
+  --font-reg: 16px;
+  --font-middle-small: 15px;
+  --font-small: 14px;
+  --font-smaller: 12px;
+  --font-smallest: 11px;
+  // Weight
+  --font-reg-bold: 400;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  // Gap
+  --gap-biggest: 64px;
+  --gap-big: 24px;
+  --gap-reg: 20px;
+  --gap-small: 13px;
+  --gap-smaller: 10px;
+  --gap-smallest: 8px;
+}
+
+// Mixins
+// Buttons
+@mixin button-primary {
+  font-size: var(--font-reg);
+  color: var(--col-black);
+  background: var(--col-white);
+  border: 0px;
+  padding: 8px 32px;
+  min-block-size: 48px;
+  min-inline-size: 0px;
+}
+@mixin button-primary--small {
+  @include button-primary;
+  font-size: var(--font-small);
+  min-block-size: 32px;
+  padding: 4px 16px;
+}
+@mixin button-primary--green {
+  @include button-primary;
+  background: var(--col-green);
+}
+@mixin button-primary--no-color {
+  @include button-primary;
+  background: none;
+  color: var(--col-white);
+  border: 1px solid var(--col-gray-dark);
+}
+@mixin button-primary--no-color-small {
+  @include button-primary--no-color;
+  font-size: var(--font-smaller);
+  padding: 3px 15px;
+  padding-left: 12px;
+  min-block-size: 32px;
+}
+
+// Horizontal rule
+@mixin horizonral-rule {
+  border-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 24px;
+  margin-left: 8px;
+  margin-right: 8px;
+
+  margin-block-start: 0px;
+  -webkit-tap-highlight-color: transparent;
+  border: 0px;
+  border-block-start: 1px solid rgba(255, 255, 255, 0.1);
+  margin-block-end: 24px;
+}
+
+// Fonts
+@font-face {
+  font-family: "circular";
+  src: url(../src/font/CircularStd-Bold.otf);
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "circular";
+  src: url(../src/font/CircularStd-Book.otf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+// Base
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  font-family: "circular";
+
+  font-size: var(--font-smaller);
+  font-weight: var(--font-reg-bold);
+  line-height: 1.4;
+
+  background: var(--col-black);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.frame {
+  height: 100vh;
+  padding: 8px;
+
+  display: grid;
+  grid-template-columns: 338px 1fr;
+  grid-template-rows: 1fr max-content;
+  gap: var(--gap-smallest);
+
+  .component {
+    background: var(--col-black-light);
+    border-radius: 8px;
+    position: relative;
+  }
+
+  ol,
+  ul {
+    list-style: none;
+  }
+
+  a:link,
+  a:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+button {
+  font-family: inherit;
+  line-height: inherit;
+  font-weight: var(--font-bold);
+  border-radius: 9999px;
+  transform: translate3d(0px, 0px, 0px);
+  transition-duration: 33ms;
+  transition-property: background-color, border-color, color, box-shadow, filter,
+    transform;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    scale: 1.05;
+  }
+}
+
+// Commons
+.white-svg path {
+  fill: var(--col-white);
+}
+
+.is-col-white {
+  color: var(--col-white);
+  fill: var(--col-white);
+}
+
+.is-col-gray {
+  color: var(--col-gray);
+  fill: var(--col-gray);
+}

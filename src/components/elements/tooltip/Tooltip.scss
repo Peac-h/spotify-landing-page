@@ -1,0 +1,21 @@
+.tooltip {
+  width: max-content;
+  background: var(--col-black-sec);
+  color: var(--col-white);
+  border-radius: 5px;
+  padding: 3px 7px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -200%);
+  font-size: var(--font-small);
+  font-weight: var(--font-reg-bold);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+}

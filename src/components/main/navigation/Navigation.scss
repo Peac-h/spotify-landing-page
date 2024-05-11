@@ -1,0 +1,97 @@
+@import "../../../styles.scss";
+
+.footer-nav {
+  padding: 16px var(--padding-clamp);
+  padding-top: 54.5px;
+
+  &__container {
+    padding: 40px 8px 0px;
+    display: flex;
+
+    @media screen and (max-width: 991px) {
+      flex-direction: column;
+    }
+  }
+
+  &__useful-links {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 1 50%;
+    min-width: 83px;
+
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+    }
+
+    &-container {
+      width: 20%;
+      margin-right: 24px;
+      margin-bottom: 32px;
+
+      @media screen and (max-width: 991px) {
+        width: 40%;
+      }
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__useful-link {
+    font-size: var(--font-reg);
+    font-weight: var(--font-reg-bold);
+    color: var(--col-gray-sec);
+    margin: 7.6px 0;
+    width: fit-content;
+
+    &:hover {
+      color: var(--col-white);
+      text-decoration: underline;
+      text-decoration-color: var(--col-gray-sec);
+    }
+
+    &-heading {
+      font-size: var(--font-reg);
+      font-weight: var(--font-bold);
+    }
+  }
+
+  &__social-links {
+    display: flex;
+    gap: var(--font-reg);
+    margin-bottom: 40px;
+  }
+
+  &__social-link {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--col-black-ter);
+    cursor: default;
+
+    &:hover {
+      background: var(--col-gray-dark);
+    }
+  }
+
+  &__horizontal-rule {
+    @include horizonral-rule;
+  }
+
+  &__rights {
+    color: var(--col-gray-sec);
+    font-size: var(--font-small);
+    font-weight: var(--font-reg-bold);
+    padding: 0 8px;
+    padding-top: 14px;
+  }
+
+  &__curr-year {
+    font-size: var(--font-middle-small);
+  }
+}

@@ -1,0 +1,101 @@
+@import "../../../styles.scss";
+
+.sidebar-library {
+  flex: 1 1 0%;
+
+  &__header {
+    padding: 8px 16px;
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-button {
+      font-size: var(--font-reg);
+      color: var(--col-gray-sec);
+      background: none;
+      border: 0px;
+      padding: 8px;
+      letter-spacing: -0.1px;
+
+      &--right {
+        transition: background 0.2s linear;
+
+        &:hover {
+          background: var(--col-black-oct);
+          svg {
+            fill: var(--col-white);
+          }
+        }
+      }
+
+      &:hover {
+        scale: 1;
+      }
+
+      &:hover .sidebar-library-svg--left,
+      &:hover span {
+        color: var(--col-white);
+        fill: var(--col-white);
+      }
+    }
+
+    &--shadow {
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-smallest);
+    width: 337px;
+    height: calc(100vh - 517px);
+    min-height: 85px;
+    overflow-y: scroll;
+
+    padding: 0 7px 16px 8px;
+  }
+
+  &__svg--left {
+    margin-right: 12px;
+    fill: var(--col-gray-sec);
+  }
+
+  &__svg--right {
+    transition: fill 0.2s linear;
+    fill: var(--col-gray-sec);
+  }
+
+  &__svg--left,
+  &__button-text {
+    transition: fill 0.2s linear, color 0.2s linear;
+  }
+
+  &__chapter {
+    margin: 8px 0;
+    padding: 16px 20px;
+    background: var(--col-black-sec);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-smallest);
+    align-items: flex-start;
+
+    &-title {
+      font-size: var(--font-reg);
+      font-weight: var(--font-bold);
+    }
+
+    &-text {
+      font-size: var(--font-small);
+      margin-bottom: 11px;
+    }
+
+    &-button {
+      @include button-primary--small;
+    }
+  }
+}

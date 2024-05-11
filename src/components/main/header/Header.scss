@@ -1,0 +1,110 @@
+@import "../../../styles.scss";
+
+.header {
+  display: flex;
+  gap: var(--gap-smallest);
+  height: 64px;
+  justify-content: space-between;
+  padding: 16px var(--padding-clamp);
+  backdrop-filter: blur(1px);
+  position: fixed;
+  width: calc(100vw - 338px - 8px * 3);
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+
+  &__fade-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: background-color 0.25s, opacity 0.4s ease-out;
+
+    &::after {
+      content: "";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: var(--col-black-light);
+      backdrop-filter: blur(1px);
+      z-index: -1;
+    }
+  }
+
+  &__left {
+    display: flex;
+    gap: var(--gap-smallest);
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-smallest);
+
+    pointer-events: auto;
+    white-space: nowrap;
+  }
+
+  &__button {
+    font-size: var(--font-reg);
+    border: none;
+    background: none;
+    color: var(--col-gray-sec);
+
+    letter-spacing: 1.76px;
+    line-height: 18px;
+
+    transition-duration: 33ms;
+    transition-property: background-color, border-color, color, box-shadow,
+      filter, transform;
+
+    &:hover {
+      color: var(--col-white);
+    }
+  }
+
+  &__line {
+    background: var(--col-white);
+    height: 25px;
+    margin: 16px;
+    width: 1px;
+    filter: blur(1px);
+  }
+
+  &__icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+    border: none;
+    background: rgba(0, 0, 0, 0.7);
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  &-svg {
+    opacity: 1;
+    fill: var(--col-white);
+  }
+
+  &__cta-button {
+    letter-spacing: 0;
+
+    &--sign {
+      color: var(--col-gray-sec);
+      background: none;
+      padding: 8px;
+      margin-right: 16px;
+    }
+
+    &--login {
+      @include button-primary;
+    }
+  }
+}

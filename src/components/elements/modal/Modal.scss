@@ -1,0 +1,103 @@
+@import "../../../styles.scss";
+
+.modal-frame {
+  background-color: rgba(0, 0, 0, 0.9);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 104;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-small);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s ease;
+
+    &.show {
+      opacity: 1;
+      transform: translateY(25px);
+    }
+
+    &__content {
+      border-radius: 8px;
+      background-image: linear-gradient(
+        -180deg,
+        rgba(0, 0, 0, 0.4),
+        var(--col-black-qui)
+      );
+      padding: 64px 70px;
+      width: 810px;
+      background-color: var(--col-black-qua);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--gap-biggest);
+
+      &-img {
+        width: 300px;
+        border-radius: 8px;
+      }
+
+      &-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &-heading {
+        font-size: var(--font-biggest);
+        margin: 8px 0 24px;
+        letter-spacing: -0.4px;
+        text-align: center;
+      }
+
+      &-btn-sign-up {
+        @include button-primary--green;
+        margin-bottom: 16px;
+      }
+
+      &-btn-download {
+        @include button-primary--no-color;
+        margin-bottom: 32px;
+      }
+
+      &-login {
+        font-size: var(--font-small);
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      &-login-button {
+        padding: 0 8px;
+        font-weight: var(--font-semi-bold);
+        color: var(--col-white) !important;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__button {
+      color: var(--col-gray-sec);
+      background: none;
+      padding: 8px;
+      border: 0px;
+      font-size: var(--font-reg);
+
+      &:hover {
+        color: var(--col-white);
+      }
+    }
+  }
+}

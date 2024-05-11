@@ -1,0 +1,60 @@
+@import "../../../styles.scss";
+
+.sidebar-footer {
+  // Say hello!
+
+  &__links-container {
+    margin: 32px 0;
+    padding: 0 24px;
+    text-align: start;
+    font-size: var(--font-smallest);
+    color: var(--col-gray-sec);
+  }
+
+  &__links-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__link-container {
+    height: 28px;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__button {
+    font-size: inherit;
+    border: none;
+    background: none;
+    color: inherit;
+  }
+
+  &__cookie-link {
+    display: inline-block;
+    padding-top: 6px;
+    font-size: var(--font-smaller);
+
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+
+  &__languages {
+    margin-bottom: 32px;
+    padding: 0 24px;
+
+    &-button {
+      @include button-primary--no-color-small;
+    }
+
+    .sidebar-footer__svg {
+      margin-right: 4px;
+    }
+  }
+}

@@ -22,7 +22,7 @@ The page is responsive, just like the original.
 ## Author
 
 - [LinkedIn](https://www.linkedin.com/in/tamta-lomidze-b336b9266/)
-- [Portfolio](https://peachportfolio.com/)
+- [Portfolio](https://peachfolio.online/)
 
 ## Non-Commercial Use
 

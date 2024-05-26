@@ -9,6 +9,7 @@
   backdrop-filter: blur(1px);
   position: fixed;
   width: calc(100vw - 338px - 8px * 3);
+  min-width: 472px;
   z-index: 1;
   background: rgba(0, 0, 0, 0.5);
 
@@ -65,12 +66,22 @@
     }
   }
 
+  &__service-button {
+    @media screen and (max-width: 1000px) {
+      display: none;
+    }
+  }
+
   &__line {
     background: var(--col-white);
     height: 25px;
     margin: 16px;
     width: 1px;
     filter: blur(1px);
+
+    @media screen and (max-width: 1000px) {
+      display: none;
+    }
   }
 
   &__icon-btn {
